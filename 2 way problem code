@@ -1,0 +1,35 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int T,i;
+    cin>>T;
+    while(T)
+    {   int count=0;
+        int N;
+        cin>>N;
+        int a[N];
+        for(i=0;i<N;i++)
+            cin>>a[i];
+        for(i=0;i<N;i++)
+        {   //cout<<a[i]<<endl;
+            for(int j=2;j<=a[i]/2;i++)// J++ should be there but dont know how 3 casespassed. pls help. check issue created
+            {
+                if(a[i]%j==0)
+                {    count++;
+                     a[i]=a[i]/j;
+                }
+            }
+        }
+     if(count%2==0) cout<<"B\n";
+     else cout<<"A\n";
+        T--;
+    }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
